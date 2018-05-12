@@ -9,7 +9,7 @@ git add -A
 
 git commit -m "message"
 
-#remote 
+# remote 
 
 ssh-keygen -t rsa -C "874050707@qq.com"
 
