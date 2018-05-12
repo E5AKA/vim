@@ -127,6 +127,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set laststatus=2
+set encoding=utf-8
+set termencoding=utf-8
 set smartindent
 set expandtab
 set autoindent
@@ -134,5 +136,5 @@ set nowrap
 set nocompatible
 set incsearch
 set hlsearch
-set cursorline
+"set cursorline
 "set cursorcolumn
