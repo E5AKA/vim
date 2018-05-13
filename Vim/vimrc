@@ -76,7 +76,7 @@ map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
         exec "w"
         if &filetype == 'c'
-                exec '!gcc % -o %<'
+                exec '!gcc -g % -o %<'
                 exec '!time ./%<'
         elseif &filetype == 'cpp'
                 exec '!g++ % -o %<'
@@ -122,13 +122,12 @@ call vundle#end()
 filetype plugin indent on
  
 syntax on
+
 set nu
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set laststatus=2
-set encoding=utf-8
-set termencoding=utf-8
 set smartindent
 set expandtab
 set autoindent
@@ -136,5 +135,6 @@ set nowrap
 set nocompatible
 set incsearch
 set hlsearch
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 "set cursorline
 "set cursorcolumn
