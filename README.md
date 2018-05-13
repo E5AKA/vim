@@ -11,7 +11,7 @@ git commit -m "message"
 
 # remote 
 
-ssh-keygen -t rsa -C "874050707@qq.com"
+ssh-keygen -t rsa -C "example@ex.com"
 
 git remote add origin git@github.com:e5aka/xxx.git --git remote rm origin
 
