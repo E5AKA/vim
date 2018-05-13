@@ -1,7 +1,7 @@
 # vimrc
 
 git config --global user.name "e5aka" 
-git config --global user.email "874050707@qq.com"
+git config --global user.email "example@ex.com"
 
 git init
 
