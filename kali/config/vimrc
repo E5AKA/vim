@@ -1,0 +1,13 @@
+set nu
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set laststatus=2
+set smartindent
+set expandtab
+set autoindent
+set nowrap
+set nocompatible
+set incsearch
+set hlsearch
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
