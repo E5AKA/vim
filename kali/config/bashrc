@@ -79,6 +79,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias bye='poweroff'
     alias py='python3'
     alias kkk='echo 3 > /proc/sys/vm/drop_caches;free -h'	
+    alias esaka='ssh root@cloud.esaka.cn -p 1997'
+    alias gg='gcc -g'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
