@@ -108,16 +108,48 @@ let NERDTreeWinSize=25
 "jedi-completion options
 autocmd FileType python setlocal completeopt-=preview
 
+"ale
+""始终开启标志列
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+"自定义error和warning图标
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+"在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+""显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+""<Leader>s触发/关闭语法检查
+nmap <Leader>a :ALEToggle<CR>
+"<Leader>d查看错误或警告的详细信息
+nmap <Leader>e :ALEDetail<CR>
+"文件内容发生变化时不进行检查
+let g:ale_lint_on_text_changed = 'never'
+"打开文件时不进行检查
+let g:ale_lint_on_enter = 0
+"使用clang对c和c++进行语法检查，对python使用pylint进行语法检查
+let g:ale_linters = {
+"\   'c': ['clang'],
+"\   'javascript': ['eslint'],
+\   'python': ['pylint'],
+\}
+
 "VundleVim Plugin Management
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tell-k/vim-autopep8' 
+Plugin 'tell-k/vim-autopep8'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'   " 自动补全
+Plugin 'w0rp/ale'               " 语法检测
 call vundle#end()
 filetype plugin indent on
  
@@ -138,3 +170,12 @@ set hlsearch
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 "set cursorline
 "set cursorcolumn
+
+"my map
+"为单词添加"
+"nnoremap <Leader>" viw<esc>bi"<esc>ea"<esc>
+"自动补全
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
+"inoremap " ""<Esc>i
