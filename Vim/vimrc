@@ -106,7 +106,10 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeWinSize=25
 
 "jedi-completion options
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
+let g:jedi#completions_enabled = 0
+let g:python3_host_prog = '/usr/bin/python3'
+let g:deoplete#enable_at_startup = 1
 
 "ale
 ""始终开启标志列
@@ -149,6 +152,11 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'   " 自动补全
+Plugin 'deoplete-plugins/deoplete-jedi' " Python支持
+"Plugin 'Shougo/deoplete-clangx'        " C 支持
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'w0rp/ale'               " 语法检测
 call vundle#end()
 filetype plugin indent on
@@ -168,6 +176,7 @@ set nocompatible
 set incsearch
 set hlsearch
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set pyxversion=3
 "set cursorline
 "set cursorcolumn
 
