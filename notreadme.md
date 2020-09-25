@@ -18,3 +18,5 @@ git remote add origin git@github.com:e5aka/xxx.git --git remote rm origin
 git pull --rebase origin master
 
 git push -u origin master(first time) git push
+
+# vscode
